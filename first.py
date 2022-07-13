@@ -5,6 +5,6 @@ steps:
 - name: test
   image: python
   commands:
-  - pytest
+  - 2+3
 
   
