@@ -5,6 +5,7 @@ steps:
 - name: test
   image: ubuntu
   commands:
+  - pwd
   - ls
 
   
