@@ -3,8 +3,8 @@ name: default
 
 steps:
 - name: test
-  image: python
+  image: ubuntu
   commands:
-  - pytest
+  - ls
 
   
