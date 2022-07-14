@@ -1,14 +1,17 @@
----
 kind: pipeline
 type: docker
 name: default
 
 steps:
-- name: hello
-  image: busybox
-  commands:
-  - echo hello world
-
-trigger:
-  branch:
-  - main
+  - name: build
+    image: plugins/ecr
+    settings:
+      dry_run: true
+      access_key: AKIAYZMOHPKURF2GC636
+      secret_key:
+        from_secret: my_access_key
+      repo: droneci_testing
+      registry: 604278061737.dkr.ecr.ap-south-1.amazonaws.com/droneci_testing:latest
+      tags:
+      - latest
+      - ${DRONE_COMMIT_SHA:0:8}
